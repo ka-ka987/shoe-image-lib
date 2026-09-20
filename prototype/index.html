@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="PRO DEVELOPMENT 鞋款图片上传与展示模块" />
+    <title>PRO DEVELOPMENT</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Cpath d='M17 42c9 5 23 5 31-4M20 25c7-8 20-8 27-1' fill='none' stroke='%23fff' stroke-width='5' stroke-linecap='square'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./css/development.css?v=10" />
+  </head>
+  <body>
+    <main class="gallery-app" id="gallery-app">
+      <section class="module-shell" aria-labelledby="module-title">
+        <header class="module-header">
+          <h1 id="module-title">PRO DEVELOPMENT</h1>
+          <div class="module-actions">
+            <span class="style-count" id="style-count">0 款</span>
+            <button class="add-style-button" id="add-style-button" type="button"><span aria-hidden="true">＋</span> 新增款式</button>
+          </div>
+        </header>
+
+        <section class="style-grid" id="style-grid" aria-label="鞋款图片上传与展示"></section>
+
+        <nav class="pagination" id="pagination" aria-label="款式分页" hidden>
+          <button type="button" id="previous-page" aria-label="上一页">←</button>
+          <span id="page-status">1 / 1</span>
+          <button type="button" id="next-page" aria-label="下一页">→</button>
+        </nav>
+      </section>
+
+      <input id="image-file-input" type="file" accept="image/png,image/jpeg,image/webp,image/avif" hidden />
+      <div class="upload-toast" id="upload-toast" role="status" aria-live="polite" hidden></div>
+
+      <dialog class="image-preview-dialog" id="image-preview-dialog" aria-labelledby="image-preview-caption">
+        <div class="image-preview-shell">
+          <header class="image-preview-header">
+            <span id="image-preview-caption">图片预览</span>
+            <button class="image-preview-close" id="image-preview-close" type="button" aria-label="关闭大图">×</button>
+          </header>
+          <div class="image-preview-stage">
+            <img id="image-preview-image" alt="" />
+          </div>
+        </div>
+      </dialog>
+    </main>
+
+    <script src="./js/development.js?v=10"></script>
+  </body>
+</html>
