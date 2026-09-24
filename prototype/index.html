@@ -6,7 +6,7 @@
     <meta name="description" content="PRO DEVELOPMENT 鞋款图片上传与展示模块" />
     <title>PRO DEVELOPMENT</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Cpath d='M17 42c9 5 23 5 31-4M20 25c7-8 20-8 27-1' fill='none' stroke='%23fff' stroke-width='5' stroke-linecap='square'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="./css/development.css?v=10" />
+    <link rel="stylesheet" href="./css/development.css?v=13" />
   </head>
   <body>
     <main class="gallery-app" id="gallery-app">
@@ -15,9 +15,13 @@
           <h1 id="module-title">PRO DEVELOPMENT</h1>
           <div class="module-actions">
             <span class="style-count" id="style-count">0 款</span>
+            <a class="subscriber-preview-link" id="subscriber-preview-link" href="./?mode=subscriber&amp;v=13" target="_blank" rel="noopener">预览订阅端</a>
             <button class="add-style-button" id="add-style-button" type="button"><span aria-hidden="true">＋</span> 新增款式</button>
           </div>
         </header>
+
+        <nav class="status-filter" id="status-filter" aria-label="发布状态筛选"></nav>
+        <nav class="category-filter" id="category-filter" aria-label="鞋型品类筛选"></nav>
 
         <section class="style-grid" id="style-grid" aria-label="鞋款图片上传与展示"></section>
 
@@ -29,7 +33,32 @@
       </section>
 
       <input id="image-file-input" type="file" accept="image/png,image/jpeg,image/webp,image/avif" hidden />
+      <input id="batch-file-input" type="file" accept="image/png,image/jpeg,image/webp,image/avif" multiple hidden />
       <div class="upload-toast" id="upload-toast" role="status" aria-live="polite" hidden></div>
+
+      <dialog class="batch-import-dialog" id="batch-import-dialog" aria-labelledby="batch-import-title">
+        <div class="batch-import-shell">
+          <header class="batch-import-header">
+            <div>
+              <span class="batch-import-eyebrow">BATCH IMPORT</span>
+              <h2 id="batch-import-title">批量导入本款图片</h2>
+            </div>
+            <button class="batch-import-close" id="batch-import-close" type="button" aria-label="关闭批量导入">×</button>
+          </header>
+          <div class="batch-import-intro">
+            <p>已根据文件名和选择顺序完成初步归类。请逐张确认，确认后才会正式上传。</p>
+            <div class="batch-import-summary" id="batch-import-summary" aria-live="polite"></div>
+          </div>
+          <div class="batch-import-list" id="batch-import-list"></div>
+          <footer class="batch-import-footer">
+            <span class="batch-import-progress" id="batch-import-progress"></span>
+            <div>
+              <button class="batch-cancel-button" id="batch-import-cancel" type="button">取消</button>
+              <button class="batch-confirm-button" id="batch-import-confirm" type="button">确认导入</button>
+            </div>
+          </footer>
+        </div>
+      </dialog>
 
       <dialog class="image-preview-dialog" id="image-preview-dialog" aria-labelledby="image-preview-caption">
         <div class="image-preview-shell">
@@ -44,6 +73,6 @@
       </dialog>
     </main>
 
-    <script src="./js/development.js?v=10"></script>
+    <script src="./js/development.js?v=13"></script>
   </body>
 </html>

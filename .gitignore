@@ -2,3 +2,5 @@
 **/.DS_Store
 *.log
 data/*.tmp
+/.integration/
+/私人趋势工作台/

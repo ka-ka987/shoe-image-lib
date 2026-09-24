@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 5,
   "next_style_number": 7,
   "order": [
     "style-06",
@@ -7,6 +7,9 @@
   ],
   "styles": {
     "style-01": {
+      "category": "sport-casual",
+      "status": "published",
+      "published_at": null,
       "images": {
         "master": "/prototype/assets/shoes/uploads/style-01/master-1789896060589-499ad3f4.png",
         "color-01": "/prototype/assets/shoes/uploads/style-01/color-01-1789896067565-60bb3521.png",
@@ -48,6 +51,9 @@
       }
     },
     "style-06": {
+      "category": "sport-casual",
+      "status": "unpublished",
+      "published_at": null,
       "images": {},
       "created_at": "2026-09-20T14:23:46.698Z"
     }

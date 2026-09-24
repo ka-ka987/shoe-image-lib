@@ -65,7 +65,7 @@ relative_path 相对模块根目录，建议如 prototype/assets/shoes/DEMO-001/
 
 **Gate 项**：status（pending/pass/fail）、evidence_refs（证据引用数组）、reviewer、reviewed_at、reviewed_revision、notes。证据引用可使用 JSON Pointer（如 /master_design）或受控本地审核文件路径；必须实际可定位，且不能仅指向空字段。AI 检查结果可作为证据之一，人工审核字段不得由 AI 冒签。
 
-**presentation** 是未来工厂资料展示的结构草案，不替代正式材料、BOM、Gate 或审核记录。当前 V0.3 图片上传页不读取 presentation 或 detail_tabs，也不显示任何开发资料弹窗。当前页面的实际图片状态以 `data/uploaded-styles.json` 为准；它记录每个鞋款位置和图片位置对应的本地网址与上传元数据。图片位置使用 `master`、`view-01…view-30`、`color-01…color-30`，编号连续增加；示例中的三张视角和两张配色只是初始显示数量，不是固定上限。
+**presentation** 是未来工厂资料展示的结构草案，不替代正式材料、BOM、Gate 或审核记录。当前 V0.6 图片上传页不读取 presentation 或 detail_tabs，也不显示任何开发资料弹窗。当前页面的实际图片状态以 `data/uploaded-styles.json` 为准；它记录每个鞋款的品类代码、发布状态、图片位置对应的本地网址与上传元数据。图库发布状态使用 `unpublished`（未发布）、`draft`（草稿）和 `published`（已发布）；它只控制图片模块的可见性，不等同于本文件前文的 Development Ready 资料状态。新款默认 `unpublished`，只有 `published` 可进入订阅端和离线发布候选；修改已发布款后自动回到 `draft`。当前品类代码为 `sport-casual`（运动休闲类）、`fashion-casual`（时装休闲类）和 `snow-boots`（雪地棉类）。图片位置使用 `master`、`view-01…view-30`、`color-01…color-30`，编号连续增加；示例中的三张视角和两张配色只是初始显示数量，不是固定上限。
 
 ## 可解析的占位 JSON
 
